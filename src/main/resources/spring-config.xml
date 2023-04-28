@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Answer beans -->
+    <bean name="answerA" class="dasturlash.uz.Answer">
+        <property name="id" value="1"/>
+        <property name="text" value="Ha"/>
+    </bean>
+
+    <bean name="answerB" class="dasturlash.uz.Answer">
+        <property name="id" value="2"/>
+        <property name="text" value="Yo'q"/>
+    </bean>
+
+    <bean name="answerC" class="dasturlash.uz.Answer">
+        <property name="id" value="3"/>
+        <property name="text" value="Bilmasam"/>
+    </bean>
+
+    <bean name="answerD" class="dasturlash.uz.Answer">
+        <property name="id" value="4"/>
+        <property name="text" value="Bo'lishi mumkun"/>
+    </bean>
+
+    <!-- Setter injection with map Object -->
+    <bean id="question" class="dasturlash.uz.Question">
+        <property name="id" value="1"/>
+        <property name="text" value="Siz mazgimisiz?"/>
+        <property name="answers">
+            <map>
+                <entry key="A" value-ref="answerA"/>
+                <entry key="B" value-ref="answerB"/>
+                <entry key="C" value-ref="answerC"/>
+                <entry key="D" value-ref="answerD"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>
